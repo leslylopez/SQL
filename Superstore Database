@@ -1,0 +1,39 @@
+-- selecting items by price in ascending order
+SELECT *
+FROM superstore
+ORDER BY price;
+
+--selecting the total sum of the prices
+SELECT SUM (price)
+FROM superstore;
+
+-- counting how many total colums there are in the price category
+SELECT COUNT (price)
+FROM superstore;
+
+-- averaging the total price from the items
+SELECT AVG (price)
+FROM superstore;
+
+-- getting the max price of the listed items
+SELECT MAX (price)
+FROM superstore;
+
+-- getting the min price of the listed items
+SELECT MIN (price)
+FROM superstore;
+
+-- getting the min price of the listed items using a subquery to display the item name
+SELECT item_name, price
+FROM superstore
+WHERE price = (SELECT MIN(price) FROM superstore);
+
+-- only getting the item name and price for items in the kitchen supplies category
+SELECT item_name, price
+FROM superstore
+WHERE category = "Kitchen Supplies";
+
+--  the number of columns in the "kitchen suppplies" category
+SELECT COUNT (*)
+FROM superstore
+WHERE category = "Kitchen Supplies";
